@@ -1,0 +1,62 @@
+<div class="uk-section">
+  <div class="uk-container uk-container-large">
+    <h1>PROJECT TERMINAL</h1>
+
+    <div class="uk-child-width-1-2" uk-grid>
+      <div>
+        <a
+          routerLink="/articles/{{ article.id }}"
+          routerLinkActive="active"
+          *ngFor="let article of leftArticles"
+          class="uk-link-reset"
+        >
+          <div class="uk-card uk-card-muted">
+            <div *ngIf="article.attributes.image" class="uk-card-media-top">
+              <img
+                src="http://localhost:1337{{ article.attributes.image.data.attributes.url }}"
+                alt=""
+                height="100"
+              />
+            </div>
+            <div class="uk-card-body">
+              <p
+                id="category"
+                *ngIf="article.attributes.category"
+                class="uk-text-uppercase"
+              >
+                {{ article.attributes.category.data.attributes.name }}
+              </p>
+              <p id="title" class="uk-text-large">{{ article.attributes.Title }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div>
+        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
+          <a
+            routerLink="/articles/{{ article.id }}"
+            routerLinkActive="active"
+            *ngFor="let article of rightArticles"
+            class="uk-link-reset"
+          >
+            <div class="uk-card uk-card-muted">
+              <div *ngIf="article.attributes.image" class="uk-card-media-top">
+                <img
+                  src="http://localhost:1337{{ article.attributes.image.data.attributes.url }}"
+                  alt=""
+                  height="100"
+                />
+              </div>
+              <div class="uk-card-body">
+                <p id="category" *ngIf="article.attributes.category" class="uk-text-uppercase">
+                  {{ article.attributes.category.data.attributes.name }}
+                </p>
+                <p id="title" class="uk-text-large">{{ article.attributes.Title }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+declare const CATEGORIES_QUERY: any;
